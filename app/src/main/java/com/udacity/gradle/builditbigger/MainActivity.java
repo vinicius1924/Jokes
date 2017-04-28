@@ -6,17 +6,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.example.showjokeslibrary.ShowJokesActivity;
 
 
 public class MainActivity extends AppCompatActivity implements EndpointsAsyncTask.OnJokeReceivedListener
 {
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        progressBar = (ProgressBar) findViewById(R.id.progressBar);
     }
 
 
@@ -44,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements EndpointsAsyncTas
 
     public void tellJoke(View view)
     {
+        progressBar.setVisibility(View.VISIBLE);
         new EndpointsAsyncTask().execute(this);
     }
 
@@ -51,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements EndpointsAsyncTas
     @Override
     public void onReceived(String joke)
     {
+        progressBar.setVisibility(View.INVISIBLE);
         Intent intent = new Intent(this, ShowJokesActivity.class);
         intent.putExtra(ShowJokesActivity.JOKE_KEY, joke);
         startActivity(intent);
