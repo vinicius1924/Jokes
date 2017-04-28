@@ -40,8 +40,7 @@ dependencies {
     })
     compile project(':showjokeslibrary')
     compile project(path: ':backend', configuration: 'android-endpoints')
-    //freeCompile 'com.google.android.gms:play-services-ads:10.2.1'
-    compile 'com.google.android.gms:play-services-ads:10.2.1'
+    freeCompile 'com.google.android.gms:play-services-ads:10.2.1'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.google.api-client:google-api-client-android:1.22.0'
     compile 'com.google.code.findbugs:jsr305:2.0.1'
