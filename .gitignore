@@ -3,6 +3,8 @@
 /captures
 app/build
 volley/build
+showjokeslibrary/build
+backend/build
 
 # built application files
 *.apk
