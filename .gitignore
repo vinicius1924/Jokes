@@ -5,6 +5,7 @@ app/build
 volley/build
 showjokeslibrary/build
 backend/build
+javajokes/build
 
 # built application files
 *.apk
